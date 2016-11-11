@@ -1,0 +1,16 @@
+RewriteEngine On
+
+#RewriteRule ^1.html$   http://smmrevolution.ru/realititrening/offer [R=301,L]
+#RewriteRule ^realititrening$ http://smmrevolution.ru/realititrening.html [R=301,L]
+#RewriteRule ^communities.html\/$ http://smmrevolution.ru/communities.html [R=301,L]
+#RewriteRule ^free.html\/$ http://smmrevolution.ru/free.html [R=301,L]
+#RewriteRule ^cases.html\/$ http://smmrevolution.ru/cases.html [R=301,L]
+#RewriteRule ^check-list.html\/$ http://smmrevolution.ru/check-list.html [R=301,L]
+#RewriteRule ^community_management.html\/$ http://smmrevolution.ru/community_management.html [R=301,L]
+#RewriteRule ^methods.html\/$ http://smmrevolution.ru/methods.html [R=301,L]
+#RewriteRule ^overview_checklist.html\/$ http://smmrevolution.ru/overview_checklist.html [R=301,L]
+#RewriteRule ^welcome.html\/$ http://smmrevolution.ru/welcome.html [R=301,L]
+
+# BEGIN WordPress
+
+# END WordPress

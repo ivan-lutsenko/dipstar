@@ -1,0 +1,25 @@
+.logo{
+position: absolute;
+
+top:-15px;
+
+left: 125px;
+
+width: 315px;
+
+height: 200px;
+}
+.logo div{
+position: absolute;
+
+/*left:73px;*/
+
+font-size: 35%;
+
+color: white;
+}
+.logo img{
+width: 183px;
+
+/*height: 75px;*/
+}

@@ -1,0 +1,661 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Diplom1.by</title>
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <meta content="telephone=no" name="format-detection">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="css/checklist.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="css/slider_new.css"/>
+    
+    <link rel="stylesheet" href="css/jquery.ui.all.css">
+    <script src="js/jquery.js"></script>
+    <script type="text/javascript">
+$(document).ready(function(){
+  var currentPosition = 0;
+  var slideWidth = 900;
+  var slides = $('.slide');
+  var numberOfSlides = slides.length;
+
+  // Remove scrollbar in JS
+  $('#slidesContainer').css('overflow', 'hidden');
+
+  // Wrap all .slides with #slideInner div
+  slides
+    .wrapAll('<div id="slideInner"></div>')
+    // Float left to display horizontally, readjust .slides width
+	.css({
+      'float' : 'left',
+      'width' : slideWidth
+    });
+
+  // Set #slideInner width equal to total width of all slides
+  $('#slideInner').css('width', slideWidth * numberOfSlides);
+
+  // Insert controls in the DOM
+  $('#slideshow')
+    .prepend('<span class="control" id="leftControl">Clicking moves left</span>')
+    .append('<span class="control" id="rightControl">Clicking moves right</span>');
+
+  // Hide left arrow control on first load
+  manageControls(currentPosition);
+
+  // Create event listeners for .controls clicks
+  $('.control')
+    .bind('click', function(){
+    // Determine new position
+	currentPosition = ($(this).attr('id')=='rightControl') ? currentPosition+1 : currentPosition-1;
+    
+	// Hide / show controls
+    manageControls(currentPosition);
+    // Move slideInner using margin-left
+    $('#slideInner').animate({
+      'marginLeft' : slideWidth*(-currentPosition)
+    });
+  });
+
+  // manageControls: Hides and Shows controls depending on currentPosition
+  function manageControls(position){
+    // Hide left arrow if position is first slide
+	if(position==0){ $('#leftControl').hide() } else{ $('#leftControl').show() }
+	// Hide right arrow if position is last slide
+    if(position==numberOfSlides-1){ $('#rightControl').hide() } else{ $('#rightControl').show() }
+  }	
+});
+
+</script>
+    <!-- Yandex map -->
+      <script type="text/javascript" charset="utf-8" src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=vgP8c9LDsH5OgkVtO2IYkWoHCiPUPYJc&id=map"></script> 
+    <!-- Yandex map -->
+    
+        <!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<style rel="stylesheet" type="text/css" >
+   #inputDate1,#name_inp,#mail_inp,#phone_inp,#file{
+    
+    padding-left:10px; 
+    line-height:40px;
+}
+    
+#name_inp,#mail_inp,#phone_inp,#inputDate1 {
+background: url(images/back_inp_text.png) center center no-repeat
+}
+</style>
+<script>
+$(function(){$('#name_inp').val("Ваше имя");
+             $('#mail_inp').val("E-mail");
+             $('#phone_inp').val("Телефон");
+             $('#inputDate1').val("Выбрать срок выполнения");
+});
+
+</script>
+<![endif]-->
+ <script src="js/jquery.ui.core.js"></script>
+	<script src="js/jquery.ui.datepicker.js"></script>
+        <script>
+    $(function($) {
+    $(".nameWork").css("background-image", "url(images/work_type.png)")
+    $(".nameSubj").css("background-image", "url(images/subject.png)")
+     });
+     <!--  -->
+
+
+
+
+
+</script> 
+</head>
+<body>
+<div class="modal_bg"></div>
+    <div class="header1">
+        <div class="box">
+            <img src="images/man1.png" alt="" />
+            <p class="text">Помощь в написании студенческих<br /> работ любой сложности в Беларуси</p>
+            <div class="contacts">
+                <div class="phone">
+                    <p><img src="images/velcome.png" alt="" /><span> +375 (29) 195-68-15 </span><br /></p>
+                    <!-- <p><img src="images/mts.png" alt="" /><span> +375 (33) 395-40-47 </span></p> -->
+                </div>
+                <div class="call" onclick="showForm('1')"></div>
+            </div>
+        </div>
+    </div>
+    <div class="appear1">
+    <div class="close_win" onclick="hideForm(1)"></div>
+    <p>Обратный звонок</p>
+    <form method="post" action="zvonok.php" onsubmit="return CheckZvonokForm('name_inp','phone_inp');" enctype="multipart/form-data">
+        <input type="text" name="name" onfocus="if(value=='Имя') value = ''" onblur="if(value=='') value = 'Имя'" required="" id="name_inp" class="input_name" placeholder="Имя">
+        <input type="text" onfocus="if(value=='Телефон') value = ''" onblur="if(value=='') value = 'Телефон'" name="phone" required="" id="phone_inp" class="input_phone" placeholder="Телефон">
+        <input type="hidden" name="whatForm" value="form5">
+        <input type="submit" name="submit" value="">
+    </form>
+</div>
+    <div class="header">
+        <div class="box">
+            <h1>13 правил <br />Как подобрать компанию по написанию <br />дипломных, курсовых работ, рефератов</h1>
+            <p style="width: 700px;">По различным причинам у студентов может не хватать времени на выполнение курсовой или даже дипломной работы.
+                Зачастую в таких случаях Вы приходите к мысли обратиться в компанию, которая специализируется на написании дипломных,
+                курсовых и прочих студенческих работ.</p>
+<p>Но тут возникает сложный вопрос: Как выбрать компанию, которой можно доверить столь ответственное дело, на что
+обратить внимание при выборе?</p>
+        </div>
+    </div>
+    <div class="block1">
+        <div class="box">
+            <div class="left">
+                <img src="images/pic1.jpg" style="width:390px;margin-left: 10px;box-shadow: 0px 0px 15px #000;">
+            </div>
+            <div class="right">
+                <h1>1.Обращайте внимание на наличие у компании сайта.</h1>
+                <p>При чем не просто сайта-визитки, который работает на бесплатном хостинге, а полноценного сайта с описанием компании, наличием открытого прайса, полезных статей, контактной информацией.</p>
+            </div>
+        </div>
+    </div>   
+    <div class="block2">
+        <div class="box">
+            <div class="left">
+                <h1>2.Наличие офиса</h1>
+                <p>Также является важным фактором выбора фирмы, которой Вы можете доверить написание того или иного вида работ. Существует большое количество мошенников в Интернете, и высока вероятность того, что выбранная Вами фирма окажется «однодневкой».</p>
+                <p>Такая компания возьмет у Вас заказ и предоплату, а завтра Вы уже не найдете никаких концов. Наличие офиса дает Вам некоторую гарантию того, что компания не испарится в один миг. То есть,у них есть офис, в котором трудятся реальные сотрудники, с которыми можно поговорить.</p>
+            </div>
+            <div class="right">
+                <img src="images/pic2.jpg" style="width:390px;margin-right: 10px;box-shadow: 0px 0px 15px #000;">
+            </div>
+        </div>
+    </div> 
+    <div class="block3">
+        <div class="box"> 
+        <div class="left">
+                <img src="images/pic3.jpg" style="width:390px;margin-left: 10px;box-shadow: 0px 0px 15px #000;">
+            </div>
+            <div class="right">
+                <h1>3.Правовой вопрос.</h1>
+                <p>Написание диплома – это очень важный этап вашей жизни, поэтому доверять написание его кому попало весьма неразумно. Увидев адрес и реквизиты фирмы по написанию дипломов, потрудитесь выяснить ряд важных моментов.</p>
+                <p>Есть ли у нее право заниматься данным видом работ. Узнайте когда и кем она зарегистрирована. Узнав эти моменты, можно уменьшить вероятность натолкнуться на недобросовестные фирмы.</p>
+            </div>
+        </div>
+    </div> 
+    <div class="block4">
+        <div class="box">
+            <div class="left">
+                <h1>4.Важно, чтобы опыт работы у компании был хотя бы от 3 лет</h1>
+                <p>Тогда, скорее всего, в компании уже есть штат опытных сотрудников, которые уже прошли проверку временем и практикой.</p>
+                <p>Результат работы компании – это прежде всего результат работы специалистов и авторов, которые в ней работают. Авторы– это главный актив любой компании, специализирующейся в этой деятельности.</p>
+                <p>За 1-2 года работы компания вряд ли может сформировать настоящую команду ответственных и профессиональных специалистов. Советуем Вам воспользоваться ссылкой <a href="http://pr-cy.ru" style="color:#0AA7FF;" target="_blank">http://pr-cy.ru</a>, чтобы проверить реальный возраст сайта, на котором Вы планируете заказать работу. Тогда Вы наглядно поймете, что «опыт работы» многих компаний может быть преувеличен</p>
+            </div>
+            <div class="right">
+                <img src="images/pic4.jpg" style="width:390px;margin-right: 10px;box-shadow: 0px 0px 15px #000;">
+            </div>
+        </div>
+    </div>
+     <div class="block1_1">
+        <div class="box">
+            <div class="left">
+                <img src="images/pic5.jpg" style="width:390px;margin-left: 10px;box-shadow: 0px 0px 15px #000;">
+            </div>
+            <div class="right">
+                <h1>5.Отлично, если у вас есть рекомендации или отзывы.Ваших знакомых и друзей.</h1>
+                <p>Т.к. если Вам уже порекомендовали фирму, уровень доверия к ней на порядок выше, нежели к незнакомой компании.</p>
+                <p>И если Ваши друзья были довольны выполненной работой, то велик шанс, что и Вам выполнят хорошо. Но Вы должны понимать, что это все равно не 100 % гарантия, т.к. у Вас могут быть различные темы и авторы, которые Вам напишут работу.</p>
+            </div>
+        </div>
+    </div>   
+    <div class="block2_2">
+        <div class="box">
+            <div class="left">
+                <h1>6.Обращайте внимание на то, чтобы фирма предоставляла возможность бесплатных доработок.</h1>
+                <p>Т.к. даже если работа написана хорошо, нет гарантии, что она понравится преподавателю и скорее всего ее предстоит переделать. Поэтому этот пункт очень важен при принятии решения о выборе компании по написанию курсовых и дипломных работ.</p>
+            </div>
+            <div class="right">
+                <img src="images/pic6.jpg" style="width:390px;margin-right: 10px;box-shadow: 0px 0px 15px #000;">
+            </div>
+        </div>
+    </div> 
+    <div class="block3">
+        <div class="box"> 
+        <div class="left">
+                <img src="images/pic7.jpg" style="width:390px;margin-left: 10px;box-shadow: 0px 0px 15px #000;">
+            </div>
+            <div class="right" style="padding-top: 108px;">
+                <h1>7.Важным гарантом качества является проверка на плагиат и отсутствие орфографических и грамматических ошибок.</h1>
+                <p>Если компания декларирует некоторый уровень уникальности информации в работе, то это дает гарантию того, что работа не скачана из Интернета.</p>
+            </div>
+        </div>
+    </div> 
+    <div class="block4_4">
+        <div class="box">
+            <div class="left">
+                <h1>8.Количество людей в штате.</h1>
+                <p>В компании, которая позиционирует себя как команда профессионалов с гарантией качества и соблюдением сроков, не может быть в штате два, а тем более один сотрудник. Ведь для того, чтобы Ваша работа была выполнена в срок с высокой степенью уникальности по всем требованиям и без ошибок, в процессе ее создания должно быть задействовано большое количество специалистов.</p>
+                <p>Поэтому будьте внимательны к информации о количестве сотрудников в штате у компании. Один и даже два человека просто физически не могут справиться со всеми процессами, а из-за этого зачастую хромает качество работы, и затягиваются сроки.</p>
+            </div>
+            <div class="right">
+                <img src="images/pic8.jpg" style="width:390px;margin-right: 10px;box-shadow: 0px 0px 15px #000;">
+            </div>
+        </div>
+    </div>
+    <div class="block5">
+        <div class="box">
+            <div class="left">
+               <img src="images/pic9.jpg" style="width:390px;margin-left: 10px;box-shadow: 0px 0px 15px #000;">
+            </div>
+            <div class="right" style="padding-top: 36px;">
+                <h1>9.Наличие виртуального офиса клиента</h1>
+                <p>Сразу это преимущество может показаться неочевидным, но Вы только задумайтесь, когда в компании нет виртуального офиса, к чему это ведет:
+                <ul>
+                    <li>отсутствие системного учета работ;</li>
+                    <li>невозможность проследить сроки сдачи;</li>
+                    <li>нечеткая фиксация оплаты и т.д.</li>
+                </ul>
+                </p>
+                <p>Если у компании есть своя внутренняя система учета Ваших заказов, все заказы обязательно проходят контроль и жесткую проверку качества и уникальности. Само собой, выдерживаются сроки, т.к. за этим следит система, в которой практически полностью нивелируется человеческий фактор. А значит, у Вас появляется реальная гарантия получить качественную работу в срок.</p>
+            </div>
+        </div>
+    </div>   
+    <div class="block2_3">
+        <div class="box">
+            <div class="left" style="padding-top: 15px;">
+                <h1>10.Официальное заключение договоров.</h1>
+                <p>Очень важно, чтобы гарантия качественно сделанной работы, сданной в срок, а главное в принципе того, что работа будет Вам сдана – должна быть подтверждена официально. Иначе после Вашей предоплаты «никто никому ничего не должен».</p>
+                <p>Только подписанный с двух сторон договор является настоящей гарантией того, что Вас не «кинут», а работу Вы получите с учетом всех обговоренных заранее пунктов</p>
+                <p>Обращайте внимание то, чтобы компания имела возможность заключать договора и в офисах и при необходимости высылать вам его по почте или в электронном виде. Важно чтобы договор был с печатями и подписями, тогда Вы точно обеспечите себе безопасность.</p>
+            </div>
+            <div class="right">
+                <img src="images/pic10.jpg" style="width:390px;margin-right: 10px;box-shadow: 0px 0px 15px #000;">
+            </div>
+        </div>
+    </div> 
+    <div class="block3">
+        <div class="box"> 
+        <div class="left">
+                <img src="images/pic11.jpg" style="width:390px;margin-left: 10px;box-shadow: 0px 0px 15px #000;">
+            </div>
+            <div class="right" style="padding-top: 155px;">
+                <h1>11.Образцы выполненных работ</h1>
+                <p>Вы сможете больше доверять компании, если увидите на ее сайте образцы выполненных работ, сможете увидеть стиль написания, уровень профессионализма специалистов, и убедитесь в открытости компании, что тоже не маловажный фактор</p>
+            </div>
+        </div>
+    </div> 
+    <div class="block4_3" style="height:440px;">
+        <div class="box">
+            <div class="left" style="padding-top: 40px;">
+                <h1>12.Электронная форма работ</h1>
+                <p>Сейчас практически все компании, пишущие работы на заказ, оформляют их в электронном виде. Это намного быстрей и удобней. Вы можете получать их сразу на электронный адрес.</p>
+                <p>Не нужно специально приходить и забирать работу в бумажном виде. При необходимости, вам могут и распечатать ее. Работа может состоять из чертежей на больших форматах. В любом случае, Вы заказываете выполнение и выдачу её в удобном для Вас виде. Если же Вам предлагают работу только в бумажном виде, то это, как минимум, странно.</p>
+            </div>
+            <div class="right">
+                <img src="images/pic12.jpg" style="width:390px;margin-right: 10px;box-shadow: 0px 0px 15px #000;">
+            </div>
+        </div>
+    </div>
+    <div class="block1">
+        <div class="box">
+            <div class="left" style="padding-top: 80px;">
+                <img src="images/pic13.jpg" style="width:390px;margin-left: 10px;box-shadow: 0px 0px 15px #000;">
+            </div>
+            <div class="right" style="padding-top: 80px;">
+                <h1>13.Наличие постоянной обратной связи с сотрудниками компании</h1>
+                <p>Если компания может обеспечить множество различных видов связи со своими клиентами (мобильная связь, скайп, электронная почта, онлайн-консультант и др.), это уже говорит о профессионализме и серьёзности деятельности. А для Вас – это удобство коммуникации и своевременная подача информации.</p>
+            </div>
+        </div>
+    </div>   
+    <div class="block2">
+        <div class="box">
+            <div class="left" style="padding-top: 20px;">
+                <h1>14.Возможность оплаты работы различными способами</h1>
+                <p>Сейчас практически все компании, пишущие работы на заказ, оформляют их в электронном виде. Это намного быстрей и удобней. Вы можете получать их сразу на электронный адрес</p>
+                <p>Не нужно специально приходить и забирать работу в бумажном виде. При необходимости, вам могут и распечатать ее. Работа может состоять из чертежей на больших форматах. В любом случае, Вы заказываете выполнение и выдачу её в удобном для Вас виде. Если же Вам предлагают работу только в бумажном виде, то это, как минимум, странно.</p>
+            </div>
+            <div class="right" style="padding-top: 90px;">
+                <img src="images/pic14.jpg" style="width:390px;margin-right: 10px;box-shadow: 0px 0px 15px #000;">
+            </div>
+        </div>
+    </div> 
+    <div class="block6">
+        <div class="box">
+            <h1>Важно!</h1>
+            <p>Хочу говорить с вами на чистоту и предупреждаю, что на этом рынке не исключены случаи, когда человек, писавший работу, может
+                пропасть за 1 час до сдачи. В этот момент Вам придется обратиться в другую компанию, которая выставит Вам бОльшую сумму за срочность.</p>
+            <p>В наше время тяжело объяснить компании, что они должны понести издержки. Но поверьте, такие компании встречаются отнюдь
+                не редко. Так как даже в перспективно хороших компаниях бывают такие неприятные ситуации</p>
+                <h1>«Предупрежден – значит, вооружен» (с)</h1>
+                <p>Соблюдая перечисленные выше требования, у Вас есть отличный шанс получить качественную работу и успешно защитить ее
+                на экзамене</p>
+                <p>Успехов в учебе!</p>
+        </div>
+    </div>
+    <div class="reviews">
+        <div class="box">
+        <div id="pageContainer">
+  <div id="slideshow">
+    <div id="slidesContainer">
+      <div class="slide">
+        <div class="one_review">
+                <img src="images/ico_review1.png" alt="" />
+                <span>Первый раз решил обратиться в компанию с просьбой написать дипломную. Времени совсем не хватало, думал уже, завалю, но друзья вовремя посоветовали обратиться в ПРОдиплом. Сделали все быстро, качество, а самое главное сняли мою головную боль в подготовке к защите, - сделали за меня презентацию, еще и речь написали. Такого  я точно не ожидал! Если акция еще действует, не раздумывая, звоните!</span>
+                <p>Андрей</p>
+                <p><a href="http://vk.com/alevonyuk">http://vk.com/alevonyuk</a></p>
+            </div>
+            <div class="one_review">
+                <img src="images/ico_review2.png" alt="" />
+                <span>Честно скажу, сразу боялась заказывать работу в подобных компаниях. Не раз при мне на защите ловите одногруппников на том, что якобы работу эту работу уже где-то видели. Но времени из-за загруженности на работе не хватало совсем, поэтому пришлось обратиться за помощью. Не представляете, какое удовольствие я получила от работы, мало того, что в любое время я могла незамедлительно связаться с сотрудниками компании, т.к. постоянно волновалась, что что-то будет не так, так мне еще и отчет об уникальности предоставили, чтобы все мои сомнения развеять. Защитилась с первого раза на 8. Так что можете не бояться заказывать! Сэкономьте лучше время и силы!</span>
+                <p>Ольга</p>
+                <p><a href="http://vk.com/id47859619">http://vk.com/id47859619</a></p>
+            </div>
+            <div class="one_review">
+                <img src="images/ico_review3.png" alt="" />
+                <span>В шоке от оперативности компании. Получил работу на 3 дня раньше, чем договаривались. Качество работы тоже порадовало. Советую всем заказывать на prodiplom.by</span>
+                <p>Артём</p>
+                <p><a href="http://vk.com/id20041876">http://vk.com/id20041876</a></p>
+            </div>
+      </div>
+      <div class="slide">
+       <div class="one_review">
+                <img src="images/ico_review4.png" alt="" />
+                <span>Заказывала диплом на prodiplom.by, не ожидала, что компания способна с таким профессионализмом подойти к работе. Работа была выполнена на достойном уровне, получила оценку на защите выше. Еще раз спасибо!</span>
+                <p>Нина</p>
+                <p><a href="http://vk.com/id154693255">http://vk.com/id154693255</a></p>
+            </div>
+            <div class="one_review">
+                <img src="images/ico_review5.png" alt="" />
+                <span>Рискнула и заказала работу на prodiplom.by. Самой диплом писать совсем не получалось,  вот сокурсники и посоветовали обратиться в компанию. Больше всего боялась, что куратор будет не доволен работой, т.к. любил он попридираться к мелочам, боялась, что если закажу, а ему не понравится, переделывать придется уже самой. Опасения оправдались, после первой проверки всех отправил на доработку, сразу была паника, потом позвонила в компанию, ребята за 2 дня исправили все по новым требованиям. Признаться честно, не ожидала! Спасибо за работу! Всем советую!  </span>
+                <p>Ольга</p>
+                <p><a href="http://vk.com/id178281558">http://vk.com/id178281558</a></p>
+            </div>
+                 <div class="one_review">
+                <img src="images/ico_review6.png" alt="" />
+                <span>Всем знакомым советую заказывать на ПРОдиплом! Помимо того, что работу сделали на достойном уровне (на 8 защитила), так еще заказала по акции, получила готовую презентацию к защите и речь совершенно бесплатно. Вот это сервис!</span>
+                <p>Юлия</p>
+                <p><a href="http://vk.com/id131509966">http://vk.com/id131509966</a></p>
+            </div>      
+      </div>
+     
+    </div>
+  </div>
+  </div>
+        </div>
+    </div>
+    <div class="chain"> </div>
+    <div class="block7">
+        <div class="box">
+            <div class="forma">
+                <p class="top">Напишите ваш e-mail, чтобы получить <br />чек-лист из 13 правил бесплатно уже сейчас</p>
+            <!--     <form method="post" action="https://app.getresponse.com/add_contact_webform.html?u=rSaF" onsubmit="return CheckOrderForm('name_inp2','phone_inp2');" enctype="multipart/form-data">
+                    <input type="text" name="name" onfocus="if(value=='Имя') value = ''" onblur="if(value=='') value = 'Имя'" required="" id="name_inp2" class="input_name" placeholder="Имя">
+                    <input type="text" onfocus="if(value=='Email') value = ''" onblur="if(value=='') value = 'Email'" name="email" required="" id="phone_inp2" class="input_phone" placeholder="Email">
+                    <input type="hidden" name="whatForm" value="form2">
+                    <input type="hidden" name="webform_id" value="7019804" />
+                    <input type="submit" name="submit" value=""/>
+                <script type="text/javascript" src="http://app.getresponse.com/view_webform.js?wid=7019804&mg_param1=1&u=rSaF"></script>
+                </form> -->
+                      <form method="post" action="checkbigform.php" onsubmit="return CheckOrderForm('theme_inp','form_select_subject','form_select_type','datepicker','dopmat','name_inp','mail_inp','phone_inp');" enctype="multipart/form-data">
+            
+           <input type="text" onfocus="if(value=='') $(this).css('background','url(images/back_inp.png)')" onblur="if(value=='') $(this).css('background','url(images/theme.png)')" name="theme" id="theme_inp"  >
+                      
+            <select id="form_select_subject" name="subject" onfocus="focusSubjSelect()" onblur="blurSubjSelect()"  onchange="changeSubjVal()">
+                <option></option>
+                <option value="97">Автоматизация производственных процессов (АПП)</option>
+                <option value="135">Анатомия</option>
+                <option value="65">Английский язык </option>
+                <option value="161">Антикризисное управление</option>
+                <option value="73">Архитектура </option>
+                <option value="162">Астрономия</option>
+                <option value="126">Аудит</option>
+                <option value="105">Аудит, бухгалтерский и управленческий учет</option>
+                <option value="74">АХД</option>
+                <option value="6">Банковский и инвестиционный менеджмент</option>
+                <option value="48">Банковское дело</option>
+                <option value="175">Белорусская литература</option>
+                <option value="174">Белорусский язык</option>
+                <option value="55">БЖД</option>
+                <option value="76">Бизнес-планирование</option>
+                <option value="33">Биология</option>
+                <option value="8">Бухучет, статистика</option>
+                <option value="185">Валютные и биржевые операции</option>
+                <option value="98">Взаимозаменяемость, стандартизация, технические измерения (ВСТИ)</option>
+                <option value="61">Внешнеэкономическая деятельность (ВЭД) </option>
+                <option value="66">Военная кафедра</option>
+                <option value="81">Высшая математика</option>
+                <option value="32">География</option>
+                <option value="69">Геодезия</option>
+                <option value="75">Геополитика</option>
+                <option value="114">Гидравлика</option>
+                <option value="71">Гостиничное дело </option>
+                <option value="195">Государственное муниципальное управление</option>
+                <option value="58">Гражданское право </option>
+                <option value="245">Гуманитарные дисциплины</option>
+                <option value="54">Делопроизводство </option>
+                <option value="137">Деньги, кредит,банки</option>
+                <option value="228">Деревообработка</option>
+                <option value="29">Детали машин</option>
+                <option value="77">Дизайн</option>
+                <option value="181">ДКБ (деньги, кредит, банки)</option>
+                <option value="171">Дошкольная педагогика</option>
+                <option value="80">Жилищное право</option>
+                <option value="99">Журналистика</option>
+                <option value="35">Земельное право</option>
+                <option value="176">Идеология</option>
+                <option value="149">Инвестиционный менеджмент</option>
+                <option value="37">Инвестиция</option>
+                <option value="91">Инженерная графика</option>
+                <option value="9">Иностранные языки</option>
+                <option value="27">Информатика</option>
+                <option value="107">Информатика и программирование</option>
+                <option value="68">Искусство </option>
+                <option value="108">История</option>
+                <option value="178">Картография</option>
+                <option value="150">Кейс (Case)</option>
+                <option value="208">Коллоидная химия</option>
+                <option value="173">Коммерческая деятельность</option>
+                <option value="170">Конфликтология</option>
+                <option value="57">Криминалистика </option>
+                <option value="139">Кулинария</option>
+                <option value="140">Культура</option>
+                <option value="120">Культура и искусство</option>
+                <option value="44">Культурология</option>
+                <option value="41">Лингвистика</option>
+                <option value="141">Литература</option>
+                <option value="125">Логика</option>
+                <option value="53">Логистика </option>
+                <option value="42">Логопедия</option>
+                <option value="82">Макроэкономика</option>
+                <option value="2">Маркетинг</option>
+                <option value="11">Математика</option>
+                <option value="242">Математическая статистика</option>
+                <option value="210">Материаловедение</option>
+                <option value="12">Медицина</option>
+                <option value="56">Международные отношения</option>
+                <option value="1">Менеджмент</option>
+                <option value="90">Металлургия</option>
+                <option value="28">Механика</option>
+                <option value="83">Микроэкономика</option>
+                <option value="186">Мировая экономика</option>
+                <option value="63">Муниципальное право</option>
+                <option value="51">Налоги</option>
+                <option value="192">Налоги и налогообложение</option>
+                <option value="116">Начертательная геометрия</option>
+                <option value="201">Недвижимость</option>
+                <option value="131">Немецкий язык</option>
+                <option value="182">ОДКБ (орг. деят. ком. банка)</option>
+                <option value="197">Онлайн-тестирование</option>
+                <option value="200">Организация и нормирование труда</option>
+                <option value="231">Организация и технология торговли</option>
+                <option value="199">Организация производства</option>
+                <option value="216">Организация торговли</option>
+                <option value="188">Организация труда</option>
+                <option value="187">Организация труда и производства</option>
+                <option value="180">ОСГН (основы соц-гум. наук)</option>
+                <option value="92">Основы конструирования</option>
+                <option value="132">Основы предпринимательства </option>
+                <option value="145">Охрана природы</option>
+                <option value="144">Охрана труда</option>
+                <option value="13">Педагогика</option>
+                <option value="184">ПиП (планирование и прогнозирование)</option>
+                <option value="14">Политология</option>
+                <option value="129">Право</option>
+                <option value="109">Предпринимательство</option>
+                <option value="196">Проблемно-Тематический курс</option>
+                <option value="15">Программирование</option>
+                <option value="67">Промышленность</option>
+                <option value="118">Процессы и аппараты пищевой промышленности</option>
+                <option value="16">Психология</option>
+                <option value="102">Радиосвязь и радиотехника</option>
+                <option value="17">Разное</option>
+                <option value="156">Ревизия</option>
+                <option value="94">Режущий инструмент</option>
+                <option value="112">Реклама, PR</option>
+                <option value="18">Русский язык и литература</option>
+                <option value="183">РЦБ (рынок ценных бумаг)</option>
+                <option value="70">Сельское хозяйство </option>
+                <option value="31">Сопромат</option>
+                <option value="146">Социальная работа</option>
+                <option value="19">Социология</option>
+                <option value="121">Спорт и туризм</option>
+                <option value="45">Статистика </option>
+                <option value="194">Страноведение</option>
+                <option value="103">Стратегический маркетинг</option>
+                <option value="104">Стратегический менеджмент</option>
+                <option value="50">Страхование </option>
+                <option value="177">Строительство</option>
+                <option value="62">Судебная бухгалтерия </option>
+                <option value="100">Телекоммуникация</option>
+                <option value="115">Теоретическая механика</option>
+                <option value="59">Теория государства и права</option>
+                <option value="79">Теория машин и механизмов </option>
+                <option value="30">Теория машин и механизмов (тмм)</option>
+                <option value="189">Теория финансов</option>
+                <option value="89">Теплотехника</option>
+                <option value="88">Теплоэнергетика</option>
+                <option value="218">Техническая механика</option>
+                <option value="20">Технические</option>
+                <option value="93">Технологическая оснастка</option>
+                <option value="96">Технология автоматизированного производства</option>
+                <option value="95">Технология машиностроения</option>
+                <option value="233">Технология общественного питания</option>
+                <option value="147">ТММ</option>
+                <option value="46">Товароведение </option>
+                <option value="179">Топография</option>
+                <option value="47">Туризм</option>
+                <option value="40">Уголовное право</option>
+                <option value="64">Уголовный процесс</option>
+                <option value="172">Украинский язык и литература</option>
+                <option value="110">Управление затратами</option>
+                <option value="3">Управление логистикой</option>
+                <option value="7">Управление персоналом (HR)</option>
+                <option value="5">Управление проектами</option>
+                <option value="4">Управленческие исследования</option>
+                <option value="52">Управленческий учёт</option>
+                <option value="213">Устройство автомобилей</option>
+                <option value="206">Фармацевтическая химия</option>
+                <option value="Физика">Физика</option>
+                <option value="Физкультура и спорт">Физкультура и спорт</option>
+                <option value="Филология">Филология</option>
+                <option value="Философия">Философия</option>
+                <option value="Финансовый анализ">Финансовый анализ </option>
+                <option value="Финансовый контроль и аудит">Финансовый контроль и аудит</option>
+                <option value="Финансы">Финансы</option>
+                <option value="Финансы и кредит">Финансы и кредит</option>
+                <option value="Французский язык">Французский язык</option>
+                <option value="Химия">Химия</option>
+                <option value="Химия и физика">Химия и физика</option>
+                <option value="Цены и ценообразование">Цены и ценообразование</option>
+                <option value="Экология">Экология</option>
+                <option value="Эконометрика и ЭМММ">Эконометрика и ЭМММ</option>
+                <option value="Экономика">Экономика</option>
+                <option value="Экономика общественного питания">Экономика общественного питания</option>
+                <option value="Экономика предприятия">Экономика предприятия  </option>
+                <option value="Экономика торговли">Экономика торговли</option>
+                <option value="Экономическая теория">Экономическая теория </option>
+                <option value="Экономические дисциплины">Экономические дисциплины</option>
+                <option value="Экономический анализ">Экономический анализ</option>
+                <option value="Экскурсоведение">Экскурсоведение </option>
+                <option value="Электроника и радиотехника">Электроника и радиотехника</option>
+                <option value="Электротехника">Электротехника</option>
+                <option value="Электроэнергетика">Электроэнергетика</option>
+                <option value="Энергетика">Энергетика</option>
+                <option value="Энергосбережение">Энергосбережение</option>
+                <option value="Этика и эстетика">Этика и эстетика</option>
+                <option value="Юридические дисциплины">Юридические дисциплины</option>
+                <option value="Юриспруденция">Юриспруденция</option>
+            </select>
+            
+            <select id="form_select_type" name="type" onfocus="focusTypeSelect()" onblur="blurTypeSelect()" onchange="changeTypeVal()">
+                <option></option>
+                <option value="10">Бакалавр</option>
+                <option value="19">Бизнес-кейс (case study)</option>
+                <option value="24">Вопросы</option>
+                <option value="1">Диплом</option>
+                <option value="6">Диплом MBA</option>
+                <option value="5">Диссертация</option>
+                <option value="11">Доклад</option>
+                <option value="9">Другое</option>
+                <option value="20">Задачи</option>
+                <option value="27">Кандидатская</option>
+                <option value="4">Контрольная</option>
+                <option value="36">Копирайтинг</option>
+                <option value="2">Курсовая</option>
+                <option value="8">Курсовая MBA</option>
+                <option value="29">Курсовая практика</option>
+                <option value="32">Курсовая практическая</option>
+                <option value="31">Курсовая теоретическая</option>
+                <option value="28">Курсовая теория</option>
+                <option value="41">Лабораторные работы</option>
+                <option value="12">Магистерская</option>
+                <option value="39">Онлайн помощь на экзамене</option>
+                <option value="13">Ответы на вопросы</option>
+                <option value="33">Отчет</option>
+                <option value="23">Практика</option>
+                <option value="14">Преддипломная практика</option>
+                <option value="37">Презентация</option>
+                <option value="40">Проверка готовой работы</option>
+                <option value="15">Производственная практика</option>
+                <option value="3">Реферат</option>
+                <option value="38">Речь к дипломной работе</option>
+                <option value="21">Сочинение</option>
+                <option value="16">Статья</option>
+                <option value="30">Чертежи</option>
+                <option value="17">Шпоры</option>
+                <option value="7">Эссе</option>
+                <option value="34">Языковой перевод</option>
+            </select>
+            
+
+           <input type="text" onfocus="if(value=='') $(this).css('background','url(images/back_inp.png)')" onblur="checkDatepicker()" name="datepicker" id="datepicker">
+           
+           <h1>Загрузить файл(ы):</h1>
+           
+           <select id="dopmat" name="dopmat" onfocus="focusDopSelect()" onblur="blurDopSelect()" onchange="changeDopVal()">
+                <option></option>
+                <option value="1">Доп. материалы</option>
+                <option value="2">План</option>
+            </select>
+           <p id="fileSize" style="font-size: 12px;text-align: left;padding-left: 30px;padding-bottom: 5px;">Максимальный размер файлов: 
+           <span style="color: #266992;font-size: 14px;">20мб</span></p>
+           <input  class="loadFile" name="file[]" onchange="setFile(1)" type="file" />
+				<div id="AddFile"></div>
+				<div style="margin-left:20px;"><p onclick="addFileField('ofile', 'AddFile'); return false;" id="addElseFile">Добавить ещё один файл</p> 
+				</div>
+            <textarea rows="10" cols="45" id="contInfo" onfocus="if(value=='Комментарии к файлу(ам):') value=''" onblur="if(value=='') value='Комментарии к файлу(ам):'"  name="commentsInfo">Комментарии к файлу(ам):</textarea>
+            
+            <textarea rows="10" cols="45" id="dopInfo" onfocus="if(value=='Дополнительные требования:') value=''" onblur="if(value=='') value='Дополнительные требования:'"  name="dopTrebov">Дополнительные требования:</textarea>
+            
+            <h1>Контактная информация:</h1>
+            
+           <input type="text" onfocus="if(value=='') $(this).css('background','url(images/back_inp.png)')" onblur="if(value=='') $(this).css('background','url(images/back_name.png)')" name="name" id="name_inp"  >
+           
+           <input type="text" onfocus="if(value=='') $(this).css('background','url(images/back_inp.png)')" onblur="if(value=='') $(this).css('background','url(images/back_email.png)')" name="email" id="mail_inp"  >
+           
+           <input type="text" onfocus="if(value=='') $(this).css('background','url(images/back_inp.png)')" onblur="if(value=='') $(this).css('background','url(images/back_phone.png)')" name="phone" id="phone_inp"  >
+         
+            <input type="submit" value="">
+            </form>
+            </div>
+        </div>
+    </div>
+    <div id="map"><div class="novsi">Октябрьская улица, 5, Минск, Беларусь<img src="images/cross_map.png" alt=""></div></div>
+    <script src="js/script.js"></script>
+</body>
+</html>

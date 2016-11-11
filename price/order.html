@@ -1,0 +1,470 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <title>Diplom1.by</title>
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <meta content="telephone=no" name="format-detection">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link rel="stylesheet" href="css/order.css" type="text/css" />
+    
+    <link rel="stylesheet" href="css/jquery.ui.all.css">
+    <script src="js/jquery.js"></script>
+    
+        <!--[if lt IE 9]>
+<script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+<style rel="stylesheet" type="text/css" >
+   #inputDate1,#name_inp,#mail_inp,#phone_inp,#file{
+    
+    padding-left:10px; 
+    line-height:40px;
+}
+    
+#name_inp,#mail_inp,#phone_inp,#inputDate1 {
+background: url(images/back_inp_text.png) center center no-repeat
+}
+</style>
+<script>
+$(function(){$('#name_inp').val("Ваше имя");
+             $('#mail_inp').val("E-mail");
+             $('#phone_inp').val("Телефон");
+             $('#inputDate1').val("Выбрать срок выполнения");
+});
+
+</script>
+<![endif]-->
+ <script src="js/jquery.ui.core.js"></script>
+<script src="js/jquery.ui.datepicker.js"></script>
+<script>
+    $(function($) {
+    $(".nameWork").css("background-image", "url(images/work_type.png)")
+    $(".nameSubj").css("background-image", "url(images/subject.png)")
+     });
+     <!--  -->
+</script> 
+</head>
+<body>
+<div class="modal_bg"></div>
+    <div class="header1">
+        <div class="box">
+            <img src="images/man1.png" alt="" />
+            <p class="text">Помощь в написании студенческих<br /> работ любой сложности в Беларуси</p>
+            <div class="contacts">
+                <div class="phone">
+                    <p><img src="images/velcome.png" alt="" /><span> +375 (29) 195-68-15 </span><br /></p>
+                    <!-- <p><img src="images/mts.png" alt="" /><span> +375 (33) 395-40-47 </span></p> -->
+                </div>
+                <div class="call" onclick="showForm('1')"></div>
+            </div>
+        </div>
+    </div>
+    <div class="appear1">
+    <div class="close_win" onclick="hideForm(1)"></div>
+    <p>Обратный звонок</p>
+    <form method="post" action="zvonok.php" onsubmit="return CheckZvonokForm('name_inp1','phone_inp1');" enctype="multipart/form-data">
+        <input type="text" name="name" onfocus="if(value=='Имя') value = ''" onblur="if(value=='') value = 'Имя'" required="" id="name_inp1" class="input_name" placeholder="Имя">
+        <input type="text" onfocus="if(value=='Телефон') value = ''" onblur="if(value=='') value = 'Телефон'" name="phone" required="" id="phone_inp1" class="input_phone" placeholder="Телефон">
+        <input type="hidden" name="whatForm" value="form5">
+        <input type="submit" name="submit" value="">
+    </form>
+</div>
+
+    <div class="block7">
+    <div id="whyChooseUs">
+        <p style="text-align: center;margin: 10px 0;font-size: 18px;text-decoration: underline;color: #11985a;"> Почему выбирают нас: </p>
+        <b>
+        <ul>
+            <li>Работаем со ВСЕМИ городами Беларуси</li>
+            <li>Принимаем заказы из России</li>
+            <li>Написано более 5000 уникальных работ</li>
+            <li>Поддержка до защиты работы</li>
+            <li>Оперативная оценка работы</li>
+            <li>Бесплатная доработка</li>
+            <li>Поэтапная оплата работ</li>
+            <li>Проверка на антиплагиат</li>
+            <li>Оперативные сроки выполнения работ</li>
+            <li>Удобные для вас способы оплаты</li>
+            <li>Многолетний опыт написания работ</li>
+            <li>Официально зарегистрированное юр. лицо</li>
+            <li>Более 100 проверенных авторов</li>
+            <li>Офис в центре Минска</li>
+        
+        </ul>
+        </b>
+        
+    </div>
+        <div class="box">
+            <div class="forma">
+                <p class="top">Напишите ваш e-mail, чтобы получить <br />чек-лист из 13 правил бесплатно уже сейчас</p>
+           
+          <form method="post" action="checkbigform.php" onsubmit="return CheckOrderForm('theme_inp','form_select_subject','form_select_type','datepicker','dopmat','name_inp','mail_inp','phone_inp');" enctype="multipart/form-data">
+            
+           <input type="text" onfocus="if(value=='') $(this).css('background','url(images/back_inp.png)')" onblur="if(value=='') $(this).css('background','url(images/theme.png)')" name="theme" id="theme_inp"  >
+                      
+            <select id="form_select_subject" name="subject" onfocus="focusSubjSelect()" onblur="blurSubjSelect()"  onchange="changeSubjVal()">
+                <option></option>
+                <option value="97">Автоматизация производственных процессов (АПП)</option>
+                <option value="135">Анатомия</option>
+                <option value="65">Английский язык </option>
+                <option value="161">Антикризисное управление</option>
+                <option value="73">Архитектура </option>
+                <option value="162">Астрономия</option>
+                <option value="126">Аудит</option>
+                <option value="105">Аудит, бухгалтерский и управленческий учет</option>
+                <option value="74">АХД</option>
+                <option value="6">Банковский и инвестиционный менеджмент</option>
+                <option value="48">Банковское дело</option>
+                <option value="175">Белорусская литература</option>
+                <option value="174">Белорусский язык</option>
+                <option value="55">БЖД</option>
+                <option value="76">Бизнес-планирование</option>
+                <option value="33">Биология</option>
+                <option value="8">Бухучет, статистика</option>
+                <option value="185">Валютные и биржевые операции</option>
+                <option value="98">Взаимозаменяемость, стандартизация, технические измерения (ВСТИ)</option>
+                <option value="61">Внешнеэкономическая деятельность (ВЭД) </option>
+                <option value="66">Военная кафедра</option>
+                <option value="81">Высшая математика</option>
+                <option value="32">География</option>
+                <option value="69">Геодезия</option>
+                <option value="75">Геополитика</option>
+                <option value="114">Гидравлика</option>
+                <option value="71">Гостиничное дело </option>
+                <option value="195">Государственное муниципальное управление</option>
+                <option value="58">Гражданское право </option>
+                <option value="245">Гуманитарные дисциплины</option>
+                <option value="54">Делопроизводство </option>
+                <option value="137">Деньги, кредит,банки</option>
+                <option value="228">Деревообработка</option>
+                <option value="29">Детали машин</option>
+                <option value="77">Дизайн</option>
+                <option value="181">ДКБ (деньги, кредит, банки)</option>
+                <option value="171">Дошкольная педагогика</option>
+                <option value="80">Жилищное право</option>
+                <option value="99">Журналистика</option>
+                <option value="35">Земельное право</option>
+                <option value="176">Идеология</option>
+                <option value="149">Инвестиционный менеджмент</option>
+                <option value="37">Инвестиция</option>
+                <option value="91">Инженерная графика</option>
+                <option value="9">Иностранные языки</option>
+                <option value="27">Информатика</option>
+                <option value="107">Информатика и программирование</option>
+                <option value="68">Искусство </option>
+                <option value="108">История</option>
+                <option value="178">Картография</option>
+                <option value="150">Кейс (Case)</option>
+                <option value="208">Коллоидная химия</option>
+                <option value="173">Коммерческая деятельность</option>
+                <option value="170">Конфликтология</option>
+                <option value="57">Криминалистика </option>
+                <option value="139">Кулинария</option>
+                <option value="140">Культура</option>
+                <option value="120">Культура и искусство</option>
+                <option value="44">Культурология</option>
+                <option value="41">Лингвистика</option>
+                <option value="141">Литература</option>
+                <option value="125">Логика</option>
+                <option value="53">Логистика </option>
+                <option value="42">Логопедия</option>
+                <option value="82">Макроэкономика</option>
+                <option value="2">Маркетинг</option>
+                <option value="11">Математика</option>
+                <option value="242">Математическая статистика</option>
+                <option value="210">Материаловедение</option>
+                <option value="12">Медицина</option>
+                <option value="56">Международные отношения</option>
+                <option value="1">Менеджмент</option>
+                <option value="90">Металлургия</option>
+                <option value="28">Механика</option>
+                <option value="83">Микроэкономика</option>
+                <option value="186">Мировая экономика</option>
+                <option value="63">Муниципальное право</option>
+                <option value="51">Налоги</option>
+                <option value="192">Налоги и налогообложение</option>
+                <option value="116">Начертательная геометрия</option>
+                <option value="201">Недвижимость</option>
+                <option value="131">Немецкий язык</option>
+                <option value="182">ОДКБ (орг. деят. ком. банка)</option>
+                <option value="197">Онлайн-тестирование</option>
+                <option value="200">Организация и нормирование труда</option>
+                <option value="231">Организация и технология торговли</option>
+                <option value="199">Организация производства</option>
+                <option value="216">Организация торговли</option>
+                <option value="188">Организация труда</option>
+                <option value="187">Организация труда и производства</option>
+                <option value="180">ОСГН (основы соц-гум. наук)</option>
+                <option value="92">Основы конструирования</option>
+                <option value="132">Основы предпринимательства </option>
+                <option value="145">Охрана природы</option>
+                <option value="144">Охрана труда</option>
+                <option value="13">Педагогика</option>
+                <option value="184">ПиП (планирование и прогнозирование)</option>
+                <option value="14">Политология</option>
+                <option value="129">Право</option>
+                <option value="109">Предпринимательство</option>
+                <option value="196">Проблемно-Тематический курс</option>
+                <option value="15">Программирование</option>
+                <option value="67">Промышленность</option>
+                <option value="118">Процессы и аппараты пищевой промышленности</option>
+                <option value="16">Психология</option>
+                <option value="102">Радиосвязь и радиотехника</option>
+                <option value="17">Разное</option>
+                <option value="156">Ревизия</option>
+                <option value="94">Режущий инструмент</option>
+                <option value="112">Реклама, PR</option>
+                <option value="18">Русский язык и литература</option>
+                <option value="183">РЦБ (рынок ценных бумаг)</option>
+                <option value="70">Сельское хозяйство </option>
+                <option value="31">Сопромат</option>
+                <option value="146">Социальная работа</option>
+                <option value="19">Социология</option>
+                <option value="121">Спорт и туризм</option>
+                <option value="45">Статистика </option>
+                <option value="194">Страноведение</option>
+                <option value="103">Стратегический маркетинг</option>
+                <option value="104">Стратегический менеджмент</option>
+                <option value="50">Страхование </option>
+                <option value="177">Строительство</option>
+                <option value="62">Судебная бухгалтерия </option>
+                <option value="100">Телекоммуникация</option>
+                <option value="115">Теоретическая механика</option>
+                <option value="59">Теория государства и права</option>
+                <option value="79">Теория машин и механизмов </option>
+                <option value="30">Теория машин и механизмов (тмм)</option>
+                <option value="189">Теория финансов</option>
+                <option value="89">Теплотехника</option>
+                <option value="88">Теплоэнергетика</option>
+                <option value="218">Техническая механика</option>
+                <option value="20">Технические</option>
+                <option value="93">Технологическая оснастка</option>
+                <option value="96">Технология автоматизированного производства</option>
+                <option value="95">Технология машиностроения</option>
+                <option value="233">Технология общественного питания</option>
+                <option value="147">ТММ</option>
+                <option value="46">Товароведение </option>
+                <option value="179">Топография</option>
+                <option value="47">Туризм</option>
+                <option value="40">Уголовное право</option>
+                <option value="64">Уголовный процесс</option>
+                <option value="172">Украинский язык и литература</option>
+                <option value="110">Управление затратами</option>
+                <option value="3">Управление логистикой</option>
+                <option value="7">Управление персоналом (HR)</option>
+                <option value="5">Управление проектами</option>
+                <option value="4">Управленческие исследования</option>
+                <option value="52">Управленческий учёт</option>
+                <option value="213">Устройство автомобилей</option>
+                <option value="206">Фармацевтическая химия</option>
+                <option value="Физика">Физика</option>
+                <option value="Физкультура и спорт">Физкультура и спорт</option>
+                <option value="Филология">Филология</option>
+                <option value="Философия">Философия</option>
+                <option value="Финансовый анализ">Финансовый анализ </option>
+                <option value="Финансовый контроль и аудит">Финансовый контроль и аудит</option>
+                <option value="Финансы">Финансы</option>
+                <option value="Финансы и кредит">Финансы и кредит</option>
+                <option value="Французский язык">Французский язык</option>
+                <option value="Химия">Химия</option>
+                <option value="Химия и физика">Химия и физика</option>
+                <option value="Цены и ценообразование">Цены и ценообразование</option>
+                <option value="Экология">Экология</option>
+                <option value="Эконометрика и ЭМММ">Эконометрика и ЭМММ</option>
+                <option value="Экономика">Экономика</option>
+                <option value="Экономика общественного питания">Экономика общественного питания</option>
+                <option value="Экономика предприятия">Экономика предприятия  </option>
+                <option value="Экономика торговли">Экономика торговли</option>
+                <option value="Экономическая теория">Экономическая теория </option>
+                <option value="Экономические дисциплины">Экономические дисциплины</option>
+                <option value="Экономический анализ">Экономический анализ</option>
+                <option value="Экскурсоведение">Экскурсоведение </option>
+                <option value="Электроника и радиотехника">Электроника и радиотехника</option>
+                <option value="Электротехника">Электротехника</option>
+                <option value="Электроэнергетика">Электроэнергетика</option>
+                <option value="Энергетика">Энергетика</option>
+                <option value="Энергосбережение">Энергосбережение</option>
+                <option value="Этика и эстетика">Этика и эстетика</option>
+                <option value="Юридические дисциплины">Юридические дисциплины</option>
+                <option value="Юриспруденция">Юриспруденция</option>
+            </select>
+            
+            <select id="form_select_type" name="type" onfocus="focusTypeSelect()" onblur="blurTypeSelect()" onchange="changeTypeVal()">
+                <option></option>
+                <option value="10">Бакалавр</option>
+                <option value="19">Бизнес-кейс (case study)</option>
+                <option value="24">Вопросы</option>
+                <option value="1">Диплом</option>
+                <option value="6">Диплом MBA</option>
+                <option value="5">Диссертация</option>
+                <option value="11">Доклад</option>
+                <option value="9">Другое</option>
+                <option value="20">Задачи</option>
+                <option value="27">Кандидатская</option>
+                <option value="4">Контрольная</option>
+                <option value="36">Копирайтинг</option>
+                <option value="2">Курсовая</option>
+                <option value="8">Курсовая MBA</option>
+                <option value="29">Курсовая практика</option>
+                <option value="32">Курсовая практическая</option>
+                <option value="31">Курсовая теоретическая</option>
+                <option value="28">Курсовая теория</option>
+                <option value="41">Лабораторные работы</option>
+                <option value="12">Магистерская</option>
+                <option value="39">Онлайн помощь на экзамене</option>
+                <option value="13">Ответы на вопросы</option>
+                <option value="33">Отчет</option>
+                <option value="23">Практика</option>
+                <option value="14">Преддипломная практика</option>
+                <option value="37">Презентация</option>
+                <option value="40">Проверка готовой работы</option>
+                <option value="15">Производственная практика</option>
+                <option value="3">Реферат</option>
+                <option value="38">Речь к дипломной работе</option>
+                <option value="21">Сочинение</option>
+                <option value="16">Статья</option>
+                <option value="30">Чертежи</option>
+                <option value="17">Шпоры</option>
+                <option value="7">Эссе</option>
+                <option value="34">Языковой перевод</option>
+            </select>
+            
+
+           <input type="text" onfocus="if(value=='') $(this).css('background','url(images/back_inp.png)')" onblur="checkDatepicker()" name="datepicker" id="datepicker">
+           
+           <h1>Загрузить файл(ы):</h1>
+           
+           <select id="dopmat" name="dopmat" onfocus="focusDopSelect()" onblur="blurDopSelect()" onchange="changeDopVal()">
+                <option></option>
+                <option value="1">Доп. материалы</option>
+                <option value="2">План</option>
+            </select>
+           <p id="fileSize" style="font-size: 12px;text-align: left;padding-left: 30px;padding-bottom: 5px;">Максимальный размер файлов: 
+           <span style="color: #266992;font-size: 14px;">20мб</span></p>
+           <input  class="loadFile" name="file[]" onchange="setFile(1)" type="file" />
+				<div id="AddFile"></div>
+				<div style="margin-left:20px;"><p onclick="addFileField('ofile', 'AddFile'); return false;" id="addElseFile">Добавить ещё один файл</p> 
+				</div>
+            <textarea rows="10" cols="45" id="contInfo" onfocus="if(value=='Комментарии к файлу(ам):') value=''" onblur="if(value=='') value='Комментарии к файлу(ам):'"  name="commentsInfo">Комментарии к файлу(ам):</textarea>
+            
+            <textarea rows="10" cols="45" id="dopInfo" onfocus="if(value=='Дополнительные требования:') value=''" onblur="if(value=='') value='Дополнительные требования:'"  name="dopTrebov">Дополнительные требования:</textarea>
+            
+            <h1>Контактная информация:</h1>
+            
+           <input type="text" onfocus="if(value=='') $(this).css('background','url(images/back_inp.png)')" onblur="if(value=='') $(this).css('background','url(images/back_name.png)')" name="name" id="name_inp"  >
+           
+           <input type="text" onfocus="if(value=='') $(this).css('background','url(images/back_inp.png)')" onblur="if(value=='') $(this).css('background','url(images/back_email.png)')" name="email" id="mail_inp"  >
+           
+           <input type="text" onfocus="if(value=='') $(this).css('background','url(images/back_inp.png)')" onblur="if(value=='') $(this).css('background','url(images/back_phone.png)')" name="phone" id="phone_inp"  >
+         
+            <input type="submit" value="">
+            </form>
+            </div>
+        </div>
+    </div>
+   <div class="footer">
+        <div class="box">
+        <div class="bubble1">Политика конфиденциальности</div>
+        <div class="bubble2">Отказ от ответственности</div>
+        <div class="bubble3">Согласие с рассылкой</div>
+        
+        
+        <!-- Politika konfidencialnosti -->
+            <div class="politika_outer">
+ <div class="politika">
+        <h1>Политика конфиденциальности</h1>
+
+<p>Ваша конфиденциальность очень важна для нас. Мы хотим, чтобы Ваша работа в Интернет по возможности была максимально приятной и полезной, и Вы совершенно спокойно использовали широчайший спектр информации, инструментов и возможностей, которые предлагает Интернет.</p>
+
+<p>Личная информация Членов, собранная при регистрации (или в любое другое время) преимущественно используется для подготовки Продуктов или Услуг в соответствии с Вашими потребностями. Ваша информация не будет передана или продана третьим сторонам. Однако мы можем частично раскрывать личную информацию в особых случаях, описанных в "Согласии с рассылкой"</p>
+
+<p>Какие данные собираются на сайте</p>
+
+<p>При добровольной регистрации на получение рассылки "Инсайдер интернет предпринимателя" вы отправляете свое Имя и E-mail через форму регистрации.</p>
+
+<p>С какой целью собираются эти данные</p>
+
+<p>Имя используется для обращения лично к вам, а ваш e-mail для отправки вам писем рассылок, новостей тренинга, полезных материалов, коммерческих предложений.</p>
+
+<p>Ваши имя и e-mail не передаются третьим лицам, ни при каких условиях кроме случаев, связанных с исполнением требований законодательства. Ваше имя и e-mail на защищенных серверах сервиса getresponse.com и используются в соответствии с его политикой конфиденциальности.</p>
+
+<p>Вы можете отказаться от получения писем рассылки и удалить из базы данных свои контактные данные в любой момент, кликнув на ссылку для отписки, присутствующую в каждом письме.</p>
+
+<p>Как эти данные используются</p>
+
+<p>На сайте www.geniusmarketing.ru используются куки (Cookies) и данные о посетителях сервиса Google Analytics.</p>
+
+<p>При помощи этих данных собирается информация о действиях посетителей на сайте с целью улучшения его содержания, улучшения функциональных возможностей сайта и, как следствие, создания качественного контента и сервисов для посетителей.</p>
+
+<p>Вы можете в любой момент изменить настройки своего браузера так, чтобы браузер блокировал все файлы cookie или оповещал об отправке этих файлов. Учтите при этом, что некоторые функции и сервисы не смогут работать должным образом.</p>
+
+<p>Как эти данные защищаются</p>
+
+<p>Для защиты Вашей личной информации мы используем разнообразные административные, управленческие и технические меры безопасности. Наша Компания придерживается различных международных стандартов контроля, направленных на операции с личной информацией, которые включают определенные меры контроля по защите информации, собранной в Интернет.</p>
+
+<p>Наших сотрудников обучают понимать и выполнять эти меры контроля, они ознакомлены с нашим Уведомлением о конфиденциальности, нормами и инструкциями.</p>
+
+<p>Тем не менее, несмотря на то, что мы стремимся обезопасить Вашу личную информацию, Вы тоже должны принимать меры, чтобы защитить ее.</p>
+
+<p>Мы настоятельно рекомендуем Вам принимать все возможные меры предосторожности во время пребывания в Интернете. Организованные нами услуги и веб-сайты предусматривают меры по защите от утечки, несанкционированного использования и изменения информации, которую мы контролируем. Несмотря на то, что мы делаем все возможное, чтобы обеспечить целостность и безопасность своей сети и систем, мы не можем гарантировать, что наши меры безопасности предотвратят незаконный доступ к этой информации хакеров сторонних организаций.</p>
+
+<p>В случае изменения данной политики конфиденциальности вы сможете прочитать об этих изменениях на этой странице или, в особых случаях, получить уведомление на свой e-mail.</p>
+
+<p>Для связи с администратором сайта по любым вопросам вы можете написать письмо на e-mail</p>
+
+
+</div>
+<img class="button" src="images/ico_cross.png" alt="">
+</div>
+
+                        <!-- Otkaz ot sootvetstvija -->
+            <!-- <div class="deny"> -->
+             <div class="deny_outer">
+ <div class="deny">
+        <h1>Отказ от ответственности</h1>
+<p>В соответствии с действующим законодательством Беларуси, Администрация отказывается от каких-либо заверений и гарантий, предоставление которых может иным образом подразумеваться, и отказывается от ответственности в отношении Сайта, Содержимого и их использования.</p>
+
+<p>Ни при каких обстоятельствах Администрация Сайта не будет нести ответственности ни перед какой стороной за какой-либо прямой, непрямой, особый или иной косвенный ущерб в результате любого использования информации на этом Сайте или на любом другом сайте, на который имеется гиперссылка с нашего cайта, возникновение зависимости, снижения продуктивности, увольнения или прерывания трудовой активности, а равно и отчисления из учебных учреждений, за любую упущенную выгоду, приостановку хозяйственной деятельности, потерю программ или данных в Ваших информационных системах или иным образом, возникшие в связи с доступом, использованием или невозможностью использования Сайта, Содержимого или какого-либо связанного интернет-сайта, или неработоспособностью, ошибкой, упущением, перебоем, дефектом, простоем в работе или задержкой в передаче, компьютерным вирусом или системным сбоем, даже если администрация будет явно поставлена в известность о возможности такого ущерба.</p>
+
+<p>Пользователь соглашается с тем, что все возможные споры будут разрешаться по нормам белорусского права.</p>
+
+<p>Пользователь соглашается с тем, что нормы и законы о защите прав потребителей не могут быть применимы к использованию им Сайта, поскольку он не оказывает возмездных услуг.</p>
+
+<p>Используя данный Сайт, Вы выражаете свое согласие с "Отказом от ответственности" и установленными Правилами и принимаете всю ответственность, которая может быть на Вас возложена.</p>
+
+</div>
+<img class="button" src="images/ico_cross.png" alt="">
+</div>
+            <!-- </div> -->
+            <!-- soglasie s rassylkoj-->
+            <div class="agree_outer">
+ <div class="agree">
+        <h1>Согласие с рассылкой</h1>
+<p>Заполняя форму на нашем сайте - вы соглашаетесь с нашей политикой конфиденциальности. Также вы соглашаетесь с тем, что мы имеем право разглашать ваши личные данные в следующих случаях:</p>
+
+<p>1) С Вашего согласия: Во всех остальных случаях перед передачей информации о Вас третьим сторонам наша Компания обязуется получить Ваше явное согласие. Например, наша Компания может реализовывать совместное предложение или конкурс с третьей стороной, тогда мы попросим у Вас разрешение на совместное использование Вашей личной информации с третьей стороной.</p>
+
+<p>2) Компаниям, работающим от нашего лица: Мы сотрудничаем с другими компаниями, выполняющими от нашего лица функции бизнес поддержки, в связи с чем Ваша личная информация может быть частично раскрыта. Мы требуем, чтобы такие компании использовали информацию только в целях предоставления услуг по договору; им запрещается передавать данную информацию другим сторонам в ситуациях, отличных от случаев, когда это вызвано необходимостью предоставления оговоренных услуг. Примеры функций бизнес поддержки: выполнение заказов, реализация заявок, выдача призов и бонусов, проведение опросов среди клиентов и управление информационными системами. Мы также раскрываем обобщенную неперсонифицированную информацию при выборе поставщиков услуг.</p>
+
+<p>3) Дочерним и совместным предприятиям: Под дочерним или совместным предприятием понимается организация, не менее 50% долевого участия которой принадлежит Компании. При передаче Вашей информации партнеру по дочернему или совместному предприятию наша Компания требует не разглашать данную информацию другим сторонам в маркетинговых целях и не использовать Вашу информацию каким-либо путем, противоречащим Вашему выбору. Если Вы указали, что не хотите получать от нашей Компании какие-либо маркетинговые материалы, то мы не будем передавать Вашу информацию своим партнерам по дочерним и совместным предприятиям для маркетинговых целей.</p>
+
+<p>4) На совместно позиционируемых или партнерских страницах: Наша Компания может делиться информацией с компаниями-партнерами, вместе с которыми реализует специальные предложения и мероприятия по продвижению товара на совместно позиционируемых страницах нашего сайта. При запросе анкетных данных на таких страницах Вы получите предупреждение о передаче информации. Партнер использует любую предоставленную Вами информацию согласно собственному уведомлению о конфиденциальности, с которым Вы можете ознакомиться перед предоставлением информации о себе.</p>
+
+<p>5) При передаче контроля над предприятием: Наша Компания оставляет за собой право передавать Ваши анкетные данные в связи с полной или частичной продажей или трансфертом нашего предприятия или его активов. При продаже или трансферте бизнеса наша Компания предоставит Вам возможность отказаться от передачи информации о себе. В некоторых случаях это может означать, что новая организация не сможет далее предоставлять Вам услуги или продукты, ранее предоставляемые нашей Компанией.</p>
+
+<p>6) Правоохранительным органам: Наша Компания может без Вашего на то согласия раскрывать персональную информацию третьим сторонам по любой из следующих причин: во избежание нарушений закона, нормативных правовых актов или постановлений суда; участие в правительственных расследованиях; помощь в предотвращении мошенничества; а также укрепление или защита прав Компании или ее дочерних предприятий.</p>
+
+<p>Вся личная информация, которая передана Вами для регистрации на нашем сайте, может быть в любой момент изменена либо полностью удалена из нашей базы по Вашему запросу. Для этого Вам необходимо связаться с нами любым удобным для Вас способом, использую контактную информацию, размещенную в специальном разделе нашего сайта.</p>
+
+<p>Если Вы захотите отказаться от получения писем нашей регулярной рассылки, вы можете это сделать в любой момент с помощью специальной ссылки, которая размещается в конце каждого письма.</p>
+
+
+</div>
+<img class="button" src="images/ico_cross.png" alt="">
+</div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+/*.pad{
+	padding-bottom: 20px;
+}
+.block{
+	position: relative;
+	padding: 25px;
+	background: #f3f3f3;
+	border-radius: 10px;
+}
+.block-prev{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	width: 55px;
+	cursor: pointer;
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+}
+.block-next{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	right: 0px;
+	width: 55px;
+	cursor: pointer;
+	background: rgba(0, 0, 0, 0.3);
+	border-radius: 5px;
+}
+.block img{
+	width: 18%;
+}
+.block-next .button-img{
+	width: 80%;
+	margin-top: 135px;
+}
+.block-prev .button-img{
+	width: 80%;
+	margin-top: 135px;
+}
+.text-1{
+	font-size: 24px;
+    margin: 0;
+    margin-bottom: 10px;
+    font-family: "OpenSansCondensedBold";
+}
+.text-2{
+	font-size: 20px;
+    margin-top: 0;
+    font-family: "OpenSansCondensedBold";
+}
+
+@media screen and (max-width: 995px){
+	.block-next .button-img{
+		width: 80%;
+		margin-top: 105px;
+	}
+	.block-prev .button-img{
+		width: 80%;
+		margin-top: 105px;
+	}
+}*/
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+#img_1 {
+}
+
+#img_2 {
+}
+
+#img_3 {
+}
+
+#img_4 {
+}
+
+#img_5 {
+}
+
+#img_6 {
+}
+
+#img_7 {
+}
+
+#img_8 {
+}
+
+#img_9 {
+}
+
+#img_10 {
+}
+
+#slider{
+	
+}
+
+#slider_box>ul>li {
+    float: left;
+    display: block;
+    padding: 5px;
+}
+
+#slider_box>ul {
+    overflow: hidden;
+    width: 1000%;
+}
+
+#slider_box {
+    overflow: hidden;
+    position: relative;
+    left: 30px;
+}
+
+#slider_box img{
+	width: 80%;
+}
+
+#left_nav {
+    float: left;
+}
+
+#nav_slider>div{
+	position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.left_next{
+	background: url('../img/prev-1.png');
+	left: -23px;
+}
+
+.right_next{
+	background: url('../img/next-1.png');
+	left: 635px;
+}
+
+#right_nav {
+    float: right;
+}
+
+#nav_slider {
+    overflow: hidden;
+    position: relative;
+    top: -160px;
+}
+
+#slider {
+    overflow: hidden;
+    width: 740px;
+    margin: 0 auto;
+}
+
+#img_11 {
+    background-color: darkgreen;
+}
+
+@media screen and (max-width: 800px){
+	#slider{
+		display: none;
+	}
+}
